@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nodes</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+    <nav><a href="/">NODES</a></nav>
+    <section id="title">
+        <h1>NODES</h1>
+        <h2>Your notes for Node</h2>
+        <P>Below is a walkthrough of how to use Javascript and Node</P>
+    </section>
+    <main>
+        <h2>What is Node</h2>
+        <p>A dane, Lars Bak, developed the v8 Javascript engine, which ran at imence speeds. Google would use that engine to build the browser. At that time, javascript was primarily utilized in the browser. Some developers wanted to run javascript outside the browser, which is where node.js was conceptualized. Node can run Api's, desktop apps, cli's, scripts and much more, in the javascript language.</p>
+        <h2>How to use Node</h2>
+        <p>To use Node, you must first download it. This can be acomplised at their own site: <a href="https://nodejs.org/en/download" target="_blank">https://nodejs.org/en/download</a>. On the site there is also a turtorial for downloading downloading the npm, which stands for node package manager. This is essential as it provides access to packages (containing code that serve a goal) developed by others. An example of a popular package is express, which is a server framework. We will use express later to help create an api. This guide is based on Node version 24.</p>
+        <p>When you have installed Node, you should have access to node in a terminal. When using windows open powershell or git bash, then type <strong>node -v</strong>.</p>
+        <div class="terminal" data-id="node-version"></div>
+        <p>This will dislpay the version you of Node you are using, and ensures the program is installed. From here create or choose a folder for a project. In this folder create a file, with the extension <strong>.js</strong>. (like app.js). In this file you can now write a script with javascript.</p>
+        <div class="file-system" id="first_project"></div>
+        <div class="file-system" id="hello-world"></div>
+        <div class="code-editor" data-id="hello-world"></div>
+        <p>To run the script use a terminal and type <strong>node "filename" </strong>.</p>
+        <div class="terminal" data-id="node-execute"></div>
+        <h2>Javascript turtorial</h2>
+        <p>Javascript is a language historically used in the browser. This is because javascript used to only run in the browser with engines such as the v8. Some languages compile to a binary file that can be executed, others again like Java is compiled to jar, and run in the java virtual machine. The browser or node can interprete javascript, and are required for this turtorial</p>
+        <p>To write to a console with javascript, you can utilize the javascript object <strong>console</strong>, and call the method <strong>log()</strong> on it. <strong>log()</strong> accepts a string as an argument.</p>
+        <div class="code-editor" data-id="hello-world"></div>
+        <div class="terminal" data-id="node-execute"></div>
+        <p>Eller et udtryk som evaluere til en en tekststreng.</p>
+        <div class="code-editor" data-id="hello-user"></div>
+        <div class="terminal" data-id="node-hello-user"></div>
+        <p><strong>log()</strong> can also accept multiple string arguments</p>
+        <div class="code-editor" data-id="hello-user-with-age"></div>
+        <div class="terminal" data-id="node-hello-user-with-age"></div>
+        <p>If you wanted to print a variable you had stored, which methods should you use? The answer is calling <strong>log()</strong> with multiple arguments. The reason for this answer is that javascript will see you trying to concatinate a non string argument to a string, and will attempt to transform the data to a datatype that can be concatinated to a string using coercion. This action will mutate the data, which could have unintentional sideeffects.</p>
+        <p>Speaking of datatypes, Javascript has 8 kinds</p>
+        <ul><li>string</li><li>boolean</li><li>number</li><li>object</li><li>bigint</li><li>undefined</li><li>null</li><li>Symbol</li></ul>
+        <p>It is worth noting that javascript is dynamically typed, meaning that a variable only has a type, when it is assigned. A javascript variable can also hold different types. If a variable starts by being assigned a string it can later assigned a number.</p>
+        <h3>Assigning a variable</h3>
+        <p>To assign a variable i javascript type the keyword const, then any name of your chosing, then use the = operator and then type in a value (We will just type ? for now). You can then optionally type a ; to indicate that the declaration is over. The most importan part is to be consistant. For this turtorial there will be ;</p>
+        <div class="code-editor" data-id="first_variable"></div>
+        <h3>Numbers</h3>
+        <p>One of the types of value a variable can store is numbers. Javascript has only one datatype for storing numbers, and wil therefore store all numbers as floating points. This means it is possible to hold both integers and decimal numers within this type.</p>
+        <div class="code-editor" data-id="number-variable"></div>
+        <p>There are some keywords that also have the type numbers. Not a number <strong>NaN</strong>, infinity <strong>Infinity</strong> and negative infinity <strong>-Infinity</strong></p>
+        <p>Sometimes you may want to store larger decimal points, to achieve this it is possible to use the siantific notaion e..</p>
+        <h3>Strings</h3>
+        <p>A string is a datatype that holds text. An example could be a persons name, a cityname or perhaps some userinput. You can assign a string to a variable using the following operators "", '', or ``.</p>
+        <div class="code-editor" data-id="string-variable"></div>
+        <p>By default you should use "" or '', given that `` has more functionalities such as intepolation and and multiline text. This feature makes `` more versitile in some senarios, which also results in slightly slower compile time. The operators "" and '' are essentially identical. To use the characters " or ' in a string. One solution is to use the other character to encase the string. Otherwise it is possible to use tha escape character \ followed by the quote you wish to escape.</p>
+        <div class="code-editor" data-id="string-variable-with-quotes"></div>
+        <p>The backsticks operator `` can also be used to make strings. This operator is more powerfull than double " and single ' quotes.</p>
+        <p>One feature is multiline texts. You can create a variable consisting of multiple lines, where line breaks are conserved.</p>
+        <div class="code-editor" data-id="backsticks-multiline"></div>
+        <div class="terminal" data-id="backsticks-multiline"></div>
+        <p>The backsticks operator has another higly used feature called string interpolation. String interpolation allows one to insert values directly in the string assignment. You insert a value using ${name of variable or just a value}</p>
+        <div class="code-editor" data-id="backsticks-interpolation"></div>
+        <div class="terminal" data-id="backsticks-interpolation"></div>
+        <h3>Boolean</h3>
+        <p>Javascript has a type for storing boolean values, so <strong>true</strong> and <strong>false</strong>. This is useful for binary variables, and evaluations of expressions</p>
+        <h3>Bigint</h3>
+        <p>Sometimes you may wish to store larger numbers. For this purpose, javascript provides the datatype bigint.</p>
+        <h3>Null</h3>
+        <p>Javascript provides the datatype null, for any empty value.</p>
+        <h3>Undefined</h3>
+        <p>Javascript also provides Undefined as opossed to null. Undefined is used when you wish to store a value, but do not even know the datatype you wish to store.</p>
+        <h3>Symbol</h3>
+        <p>The symbol datatype from javascript is a unique identifier. It is often used as ids. When using Node you will often use other developers code, to avoid overiting identifiers used by other developers, one can use the symbol type.</p>
+        <h3>Object</h3>
+        <p>To assign a javascript object to a variable, we can use curly brackets <strong>{ ... }</strong>, Whereing we can define some properties. properties are key-value pairs. A key-value pair consists of a key and a saved value, almost like a variable name that is assigend a value. The key is often named to descripe what value is saved, whilst the value is the operand you wish store, and perhaps manipulated. An example of an object could be a user, with a username, email and an id. Another example could be a plant, which could contain many properties such as, coloqial name, latin name, life cycle, watering frequency, max height and whatever else could be relevant.</p>
+        <div class="code-editor" data-id="object-variable"></div>
+        <p>The Javascript object looks very similar to JSON notaion. The difference is that the keys are not surrounded by "", in Javascript objects. (It is also possible to write comments inside a javascript object, which is not allowd in JSON)</p>
+        <p>The typical use of objects is to store related data together. To access the saved values we can dot into the objects keys</p>
+        <div class="code-editor" data-id="object-dotting"></div>
+        <div class="terminal" data-id="object-dotting"></div>
+        <p>An object can store any datatypes, including other objects. To access such values, one must dot into both objects, like a chain of dots.</p>
+        <div class="code-editor" data-id="object-dotting-into-object"></div>
+        <div class="terminal" data-id="object-dotting-into-object"></div>
+        <p>It is also possible to add new key-value pairs to an existing object This is achieved almost the same as accessing properties, by trying to access a key that does not exist yet.</p>
+        <div class="code-editor" data-id="object-add-property"></div>
+        <div class="terminal" data-id="object-add-property"></div>
+        <h3>More about const</h3>
+        <p>const is short for constant, but it is not as simple as the value can never be changed, just that the variable is contant in the assignment. The value is still mutable, so it is still possible to mutate the data within value, but it is not possible to reassign the value.</p>
+        <div class="code-editor" data-id="const-reassignment"></div>
+        <p>There used to be a different keyword to const and let, called var. But the use of var has been discontinued in modern development, and let is its replacement. (The reason is that var is hoisted to the top and assigned undefined. This caused confusing behavoir when developing, as undefined can be used by developers on purpose. So why does the var keyword even exist anymore? Javascript has a philosophy that no feature is ever removed, making it always backwards compatible. This was probably due to javascripts use primarily for websites, so the philosophy ensures that websites do not need extra maintinance after creation)</p>
+        <h2>Value manipulation</h2>
+        <h2>Servers with Node</h2>
+        <p>One of the benefits of Node, is that you can use Javascript for a webpage's dynamic frontend, and the server backend serving the web pages to the client</p>
+        <h3>Express</h3>
+        <p>One way to quickly create a Node backend server, is to use a library like Express. Express provides the infrastrucure to accept request and route the clients on the website.</p>
+        <p>To use Express in a file use javascripts import keyword. Type <strong>import</strong>, then a name of your choice, then the keyword <strong>from</strong>, and the name of the package you wish to use</p>
+        <div class="file-system" id="hello-world"></div>
+        <div class="code-editor" data-id="import-express"></div>
+        <p>But you may have realised that running this file, will cause an error to be thrown similar to the one below.</p>
+        <div class="terminal" data-id="missing-express"></div>
+        <p>The relevant error message is at <strong>Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'express' imported from C:\Users\Karen\vs-code-programmer\Node\test\app.js</strong>, where we are explicitly told, that node does not recognize the package 'express'</p>
+        <p>This is because we have not installed it via the node package manager. This can be achieved using the terminal command <strong>npm install express</strong></p>
+        <div class="terminal" data-id="install-express"></div>
+        <p>This will result in a new file to be generated by node pacage manager named package.json. This file predictally contains JSON notaion, which looks similar to javascript pbjects.</p>
+        <div class="file-system" id="package.json"></div>
+        <p>As seen in the file-system above, there are acually two files generated <strong>package.json</strong> and <strong>package-lock.json</strong></p>
+        <p><strong>package.json</strong> contains meta-data about the project, and will in our case look like the following file:</p>
+        <div class="code-editor" data-id="package.json"></div>
+        <p><strong>package-lock.json</strong> contains data about the exact version each dependency may have. This is meant to ensure that everyone with this file, will have the exact same dependencies and avoid "Works on my maschine" issues.</p>
+        <p><strong>package.json</strong> is a file like any other, and can be manually written. You could delete the file in your project, and write it from scratch yourself. The important part i that the name is exactly the same and that the code is written using JSON notaion, and contain recognized keys (like "dependencies").</p>
+        <p>As stated earlier <strong>package.json</strong> should contain metadata, and a project often contains more metadata than dependencies. It is possbile to manually write this data, but there is also a way to save yourself some time.</p>
+        <h2>A better start to a Node project</h2>
+        <p>The Node package manager can help you start your project with the command init, that generates a <strong>package.json</strong> file, with relevant meta-data from your terminal.</p>
+        <div class="terminal" data-id="npm-init"></div>
+        <p>This command will generate the <strong>package.json</strong> file. But we are still missing the <strong>package-lock.json</strong> file. The same wil be true if you manually write the <strong>package.json</strong> file. To generate the missing file type into your terminal <strong>npm install</strong>.</p>
+        <p>The command will install all dependencies from the "dependencies" key inside <strong>package.json</strong>. Generating the file with <strong>npm init</strong> will not add the dependencies field, so be sure to add it manually, in our case just express</p>
+        <div class="code-editor" data-id="first_project-package.json"></div>
+        <div class="terminal" data-id="npm-install"></div>
+        <h2>Express server</h2>
+        <p>Now that we have a project, and we have express installed, we can make a server with just 3 lines of code.</p>
+        <div class="code-editor" data-id="first-express-server"></div>
+        <div class="terminal" data-id="first-express-server"></div>
+        <p>You may see that nothing seems to change in the terminal. Thats hopefully because the server is running, and you should be able to se a page in you browser, if you search for localhost:8080</p>
+        <p>You should see a white page with with the text <strong>cannot GET /</strong>. This is expected.</p>
+        <p>This is because the only action our app.js file executes is listening to a port based on the argument passed. What we need is <strong>routing</strong>.</p>
+        <h3>Routing</h3>
+        <p>Express already has infrastrucure for routing. simply call the method <strong>get()</strong> on the server (that we have named app).</p>
+        <p>Calling <strong>get()</strong> without any parameters</p>
+    </main>
+    <footer>
+        <h1>Attributions</h1>
+        Folder icon: <img src="/assets/images/Folder_icon.svg"> By <a href="//commons.wikimedia.org/w/index.php?title=User:SlowedDown&amp;action=edit&amp;redlink=1" class="new" title="User:SlowedDown (page does not exist)">SlowedDown</a> - <span class="int-own-work" lang="en">Own work</span>, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" title="Creative Commons Zero, Public Domain Dedication">CC0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=172662150">Link</a>
+        Generic file icon: <img src="/assets/images/File_icon.svg"> By paomedia - <a rel="nofollow" class="external free" href="https://github.com/paomedia/small-n-flat">https://github.com/paomedia/small-n-flat</a>, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" title="Creative Commons Zero, Public Domain Dedication">CC0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=156647747">Link</a>
+        configuration file: <img src="/assets/images/Config_file_icon.svg"> By paomedia - <a rel="nofollow" class="external free" href="https://github.com/paomedia/small-n-flat">https://github.com/paomedia/small-n-flat</a>, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" title="Creative Commons Zero, Public Domain Dedication">CC0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=156648015">Link</a>
+    </footer>
+    <script type="module" src="/assets/javascript/render.js"></script>
+</body>
+</html>
