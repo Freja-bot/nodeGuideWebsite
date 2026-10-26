@@ -125,7 +125,20 @@
         <p>This is because the only action our app.js file executes is listening to a port based on the argument passed. What we need is <strong>routing</strong>.</p>
         <h3>Routing</h3>
         <p>Express already has infrastrucure for routing. simply call the method <strong>get()</strong> on the server (that we have named app).</p>
-        <p>Calling <strong>get()</strong> without any parameters</p>
+        <p>Calling <strong>get()</strong> without any parameters will cause an error, as the method expects a path and a request handler. The request handler is a function, which is possible because in Javascript, functions are first class citizens.</p>
+        <p>lets start by making a frontpage, when users first see the website. As the error message says, when we type localhost:8080, we access the path <strong>/</strong>, so we should provide the get method with the path, <strong>/</strong> as a string. Then we must also pass a function that can handle the clients request and pass a response back to the client. Becuase we will only use this function in this senario, an anonymous function will suffice.</p>
+        <div class="code-editor" data-id="first-route"></div>
+        <p>In the code above we provide <strong>get()</strong> with our path, <strong>/</strong>, and a handler method, that accepts req, request, and res, response. Then we use the response to send data back to the client. In this case we send JSON back, meaning the website should just display: {"data":"Hello"}.</p>
+        <p>the response object, is an object that express passes as an argument to any handler method we provide in the get() methods argument. This response object can also send back files, such as a html file.</p>
+        <h3>First frontpage</h3>
+        <p>To make a frontpage create a new file named index.html.</p>
+        <div class="file-system" id="first-html"></div>
+        <p>To make a html file type: &#60;!DOCTYPE html&#62; then make a open and closing html tag (&#60;html&#62; and &#60;/html&#62;). inside those tags make a head and body tag.</p>
+        <div class="code-editor" data-id="empty-index-file"></div>
+        <p>But we are still just sending te same JSON object. To send the file we have to change what the response object is sending to the client. To achieve this we have to call a different method on the response object named <strong>sendFile()</strong>. The method expects the path of our frontpage file. Its important we provide the full path, or else express will throw an error.</p>
+        <p>We could manually type the full path, but this would make the code unreliable. If the server is ever hosted anywhere else, wheter under development or in production, the code wil stop working.</p>
+        <p>Instead lets get the full path programatically. Because we are using commonjs we have access to a variable named <strong>__dirname</strong> that has the string path of where the script was executed. Because app.js in the root of the project, <strong>__dirname</strong> is the path to the root of the project. The index file is also in the root of the project, so the path is the same. From here we could concatinate the file name to the end of <strong>__dirname</strong>, but the better solution is simply to pass <strong>__dirname</strong> and the filename as seperate arguments to <strong>sendFile()</strong>.</p>
+        <div class="code-editor" data-id="first-expres-file-send"></div>
     </main>
     <footer>
         <h1>Attributions</h1>

@@ -132,6 +132,20 @@ SCRIPTDATA.set(
         text: ["const express = require(\"express\");", "const app = express();", "app.get(\"/\", (req, res) => {", "res.send({data: \"Hello\"});", "});", "app.listen(8080);"]
     }
 );
+SCRIPTDATA.set(
+    "empty-index-file",
+    {
+        filename: "index.html",
+        text: ["<!DOCTYPE html>", "<html>", "<head>", "</head>", "<body>", "</body>", "</html>"]
+    }
+);
+SCRIPTDATA.set(
+    "first-expres-file-send",
+    {
+        filename: "app.js",
+        text: ["const express = require(\"express\");", "const app = express();", "app.get(\"/\", (req, res) => {", "res.sendFile(__dirname + \"index.html\");", "});", "app.listen(8080);"]
+    }
+);
 
 export function renderCodeEditors(){
     const editors = document.querySelectorAll(".code-editor");
