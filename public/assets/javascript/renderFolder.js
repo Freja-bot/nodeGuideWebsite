@@ -40,6 +40,30 @@ FILESYSTEMDATA.set(
             ]
         }
     );
+    FILESYSTEMDATA.set(
+        "first-html",
+        {
+            currentDirectory: "first_project",
+            files: [
+                {
+                    name: "app.js",
+                    icon: "file"
+                },
+                {
+                    name: "index.html",
+                    icon: "file"
+                },
+                {
+                    name: "package.json",
+                    icon: "config"
+                },
+                {
+                    name: "package-lock.json",
+                    icon: "config"
+                }
+            ]
+        }
+    );
 const ICONS = new Map();
 ICONS.set(
     "folder",
