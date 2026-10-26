@@ -125,6 +125,13 @@ SCRIPTDATA.set(
         text: ["const express = require(\"express\");", "const app = express();", "app.listen(8080);"]
     }
 );
+SCRIPTDATA.set(
+    "first-route",
+    {
+        filename: "app.js",
+        text: ["const express = require(\"express\");", "const app = express();", "app.get(\"/\", (req, res) => {", "res.send({data: \"Hello\"});", "});", "app.listen(8080);"]
+    }
+);
 
 export function renderCodeEditors(){
     const editors = document.querySelectorAll(".code-editor");
