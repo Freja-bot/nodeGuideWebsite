@@ -1,5 +1,4 @@
 import express from "express";
-import path from "path";
 import { createPage } from "./templatingEngine/templateEngine.js"
 
 const app = express();
