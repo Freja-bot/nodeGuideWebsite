@@ -11,6 +11,10 @@ app.get("/", (req, res) => {
     res.sendFile(path.resolve("public", "index.html"));
 });
 
+app.get("/javascript", (req, res) => {
+    res.sendFile(path.resolve("public", "pages", "javascript", "javascript.html"));
+});
+
 app.listen(PORT, error =>{
     if(error){
         console.log(`Error starting the server with port: ${PORT}`)
