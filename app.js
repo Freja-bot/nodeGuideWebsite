@@ -9,7 +9,7 @@ const PORT = 8080;
 
 
 app.get("/", (req, res) => {
-    res.sendFile(path.resolve("public", "index.html"));
+    res.send(createPage("public/pages/frontpage/index.html"));
 });
 
 app.get("/javascript", (req, res) => {

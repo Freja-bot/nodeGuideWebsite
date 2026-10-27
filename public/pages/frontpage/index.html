@@ -1,19 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nodes</title>
-    <link rel="stylesheet" href="/assets/css/style.css" />
-</head>
-<body>
-    <nav><a href="/">NODES</a></nav>
-    <section id="title">
+        <section id="title">
         <h1>NODES</h1>
         <h2>Your notes for Node</h2>
         <P>Below is a walkthrough of how to use Javascript and Node</P>
     </section>
-    <main>
         <h2>What is Node</h2>
         <p>A dane, Lars Bak, developed the v8 Javascript engine, which ran at imence speeds. Google would use that engine to build the browser. At that time, javascript was primarily utilized in the browser. Some developers wanted to run javascript outside the browser, which is where node.js was conceptualized. Node can run Api's, desktop apps, cli's, scripts and much more, in the javascript language.</p>
         <h2>How to use Node</h2>
@@ -76,13 +65,3 @@
         <p>We could manually type the full path, but this would make the code unreliable. If the server is ever hosted anywhere else, wheter under development or in production, the code wil stop working.</p>
         <p>Instead lets get the full path programatically. Because we are using commonjs we have access to a variable named <strong>__dirname</strong> that has the string path of where the script was executed. Because app.js in the root of the project, <strong>__dirname</strong> is the path to the root of the project. The index file is also in the root of the project, so the path is the same. From here we could concatinate the file name to the end of <strong>__dirname</strong>, but the better solution is simply to pass <strong>__dirname</strong> and the filename as seperate arguments to <strong>sendFile()</strong>.</p>
         <div class="code-editor" data-id="first-expres-file-send"></div>
-    </main>
-    <footer>
-        <h1>Attributions</h1>
-        Folder icon: <img src="/assets/images/Folder_icon.svg"> By <a href="//commons.wikimedia.org/w/index.php?title=User:SlowedDown&amp;action=edit&amp;redlink=1" class="new" title="User:SlowedDown (page does not exist)">SlowedDown</a> - <span class="int-own-work" lang="en">Own work</span>, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" title="Creative Commons Zero, Public Domain Dedication">CC0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=172662150">Link</a>
-        Generic file icon: <img src="/assets/images/File_icon.svg"> By paomedia - <a rel="nofollow" class="external free" href="https://github.com/paomedia/small-n-flat">https://github.com/paomedia/small-n-flat</a>, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" title="Creative Commons Zero, Public Domain Dedication">CC0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=156647747">Link</a>
-        configuration file: <img src="/assets/images/Config_file_icon.svg"> By paomedia - <a rel="nofollow" class="external free" href="https://github.com/paomedia/small-n-flat">https://github.com/paomedia/small-n-flat</a>, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" title="Creative Commons Zero, Public Domain Dedication">CC0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=156648015">Link</a>
-    </footer>
-    <script type="module" src="/assets/javascript/render.js"></script>
-</body>
-</html>
