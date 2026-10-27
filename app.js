@@ -1,5 +1,6 @@
 import express from "express";
 import path from "path";
+import { createPage } from "./templatingEngine/templateEngine.js"
 
 const app = express();
 app.use(express.static("public"));
@@ -12,7 +13,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/javascript", (req, res) => {
-    res.sendFile(path.resolve("public", "pages", "javascript", "javascript.html"));
+    res.send(createPage("public/pages/javascript/javascript.html"));
 });
 
 app.listen(PORT, error =>{
