@@ -4,3 +4,66 @@
     <h2>The fuel that runs Node</h2>
     <P>Below is a walkthrough of how to use Javascript</P>
 </section>
+<h2>Javascript turtorial</h2>
+        <p>Javascript is a language historically used in the browser. This is because javascript used to only run in the browser with engines such as the v8. Some languages compile to a binary file that can be executed, others again like Java is compiled to jar, and run in the java virtual machine. The browser or node can interprete javascript, and are required for this turtorial</p>
+        <p>To write to a console with javascript, you can utilize the javascript object <strong>console</strong>, and call the method <strong>log()</strong> on it. <strong>log()</strong> accepts a string as an argument.</p>
+        <div class="code-editor" data-id="hello-world"></div>
+        <div class="terminal" data-id="node-execute"></div>
+        <p>Eller et udtryk som evaluere til en en tekststreng.</p>
+        <div class="code-editor" data-id="hello-user"></div>
+        <div class="terminal" data-id="node-hello-user"></div>
+        <p><strong>log()</strong> can also accept multiple string arguments</p>
+        <div class="code-editor" data-id="hello-user-with-age"></div>
+        <div class="terminal" data-id="node-hello-user-with-age"></div>
+        <p>If you wanted to print a variable you had stored, which methods should you use? The answer is calling <strong>log()</strong> with multiple arguments. The reason for this answer is that javascript will see you trying to concatinate a non string argument to a string, and will attempt to transform the data to a datatype that can be concatinated to a string using coercion. This action will mutate the data, which could have unintentional sideeffects.</p>
+        <p>Speaking of datatypes, Javascript has 8 kinds</p>
+        <ul><li>string</li><li>boolean</li><li>number</li><li>object</li><li>bigint</li><li>undefined</li><li>null</li><li>Symbol</li></ul>
+        <p>It is worth noting that javascript is dynamically typed, meaning that a variable only has a type, when it is assigned. A javascript variable can also hold different types. If a variable starts by being assigned a string it can later assigned a number.</p>
+        <h3>Assigning a variable</h3>
+        <p>To assign a variable i javascript type the keyword const, then any name of your chosing, then use the = operator and then type in a value (We will just type ? for now). You can then optionally type a ; to indicate that the declaration is over. The most importan part is to be consistant. For this turtorial there will be ;</p>
+        <div class="code-editor" data-id="first_variable"></div>
+        <h3>Numbers</h3>
+        <p>One of the types of value a variable can store is numbers. Javascript has only one datatype for storing numbers, and wil therefore store all numbers as floating points. This means it is possible to hold both integers and decimal numers within this type.</p>
+        <div class="code-editor" data-id="number-variable"></div>
+        <p>There are some keywords that also have the type numbers. Not a number <strong>NaN</strong>, infinity <strong>Infinity</strong> and negative infinity <strong>-Infinity</strong></p>
+        <p>Sometimes you may want to store larger decimal points, to achieve this it is possible to use the siantific notaion e..</p>
+        <h3>Strings</h3>
+        <p>A string is a datatype that holds text. An example could be a persons name, a cityname or perhaps some userinput. You can assign a string to a variable using the following operators "", '', or ``.</p>
+        <div class="code-editor" data-id="string-variable"></div>
+        <p>By default you should use "" or '', given that `` has more functionalities such as intepolation and and multiline text. This feature makes `` more versitile in some senarios, which also results in slightly slower compile time. The operators "" and '' are essentially identical. To use the characters " or ' in a string. One solution is to use the other character to encase the string. Otherwise it is possible to use tha escape character \ followed by the quote you wish to escape.</p>
+        <div class="code-editor" data-id="string-variable-with-quotes"></div>
+        <p>The backsticks operator `` can also be used to make strings. This operator is more powerfull than double " and single ' quotes.</p>
+        <p>One feature is multiline texts. You can create a variable consisting of multiple lines, where line breaks are conserved.</p>
+        <div class="code-editor" data-id="backsticks-multiline"></div>
+        <div class="terminal" data-id="backsticks-multiline"></div>
+        <p>The backsticks operator has another higly used feature called string interpolation. String interpolation allows one to insert values directly in the string assignment. You insert a value using ${name of variable or just a value}</p>
+        <div class="code-editor" data-id="backsticks-interpolation"></div>
+        <div class="terminal" data-id="backsticks-interpolation"></div>
+        <h3>Boolean</h3>
+        <p>Javascript has a type for storing boolean values, so <strong>true</strong> and <strong>false</strong>. This is useful for binary variables, and evaluations of expressions</p>
+        <h3>Bigint</h3>
+        <p>Sometimes you may wish to store larger numbers. For this purpose, javascript provides the datatype bigint.</p>
+        <h3>Null</h3>
+        <p>Javascript provides the datatype null, for any empty value.</p>
+        <h3>Undefined</h3>
+        <p>Javascript also provides Undefined as opossed to null. Undefined is used when you wish to store a value, but do not even know the datatype you wish to store.</p>
+        <h3>Symbol</h3>
+        <p>The symbol datatype from javascript is a unique identifier. It is often used as ids. When using Node you will often use other developers code, to avoid overiting identifiers used by other developers, one can use the symbol type.</p>
+        <h3>Object</h3>
+        <p>To assign a javascript object to a variable, we can use curly brackets <strong>{ ... }</strong>, Whereing we can define some properties. properties are key-value pairs. A key-value pair consists of a key and a saved value, almost like a variable name that is assigend a value. The key is often named to descripe what value is saved, whilst the value is the operand you wish store, and perhaps manipulated. An example of an object could be a user, with a username, email and an id. Another example could be a plant, which could contain many properties such as, coloqial name, latin name, life cycle, watering frequency, max height and whatever else could be relevant.</p>
+        <div class="code-editor" data-id="object-variable"></div>
+        <p>The Javascript object looks very similar to JSON notaion. The difference is that the keys are not surrounded by "", in Javascript objects. (It is also possible to write comments inside a javascript object, which is not allowd in JSON)</p>
+        <p>The typical use of objects is to store related data together. To access the saved values we can dot into the objects keys</p>
+        <div class="code-editor" data-id="object-dotting"></div>
+        <div class="terminal" data-id="object-dotting"></div>
+        <p>An object can store any datatypes, including other objects. To access such values, one must dot into both objects, like a chain of dots.</p>
+        <div class="code-editor" data-id="object-dotting-into-object"></div>
+        <div class="terminal" data-id="object-dotting-into-object"></div>
+        <p>It is also possible to add new key-value pairs to an existing object This is achieved almost the same as accessing properties, by trying to access a key that does not exist yet.</p>
+        <div class="code-editor" data-id="object-add-property"></div>
+        <div class="terminal" data-id="object-add-property"></div>
+        <h3>More about const</h3>
+        <p>const is short for constant, but it is not as simple as the value can never be changed, just that the variable is contant in the assignment. The value is still mutable, so it is still possible to mutate the data within value, but it is not possible to reassign the value.</p>
+        <div class="code-editor" data-id="const-reassignment"></div>
+        <p>There used to be a different keyword to const and let, called var. But the use of var has been discontinued in modern development, and let is its replacement. (The reason is that var is hoisted to the top and assigned undefined. This caused confusing behavoir when developing, as undefined can be used by developers on purpose. So why does the var keyword even exist anymore? Javascript has a philosophy that no feature is ever removed, making it always backwards compatible. This was probably due to javascripts use primarily for websites, so the philosophy ensures that websites do not need extra maintinance after creation)</p>
+        <h2>Value manipulation</h2>
