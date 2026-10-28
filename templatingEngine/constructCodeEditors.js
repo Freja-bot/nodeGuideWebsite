@@ -193,5 +193,5 @@ function createText(text){
 }
 
 function sanitizeForHTML(text){
-    return text.replaceAll("<", "&lt;").replaceAll(">", "&gt;")
+    return text.replaceAll("<", "&#60;").replaceAll(">", "&#62;")
 }
