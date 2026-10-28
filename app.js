@@ -7,9 +7,9 @@ app.use(express.static("public"));
 const PORT = 8080;
 
 
-/*app.get("/", (req, res) => {
+app.get("/", (req, res) => {
     res.send(pages.nodePage);
-});*/
+});
 
 app.get("/javascript", (req, res) => {
     res.send(pages.javascriptPage);
