@@ -15,7 +15,7 @@ function readPage(path){
 
 function constructCodeEditors(page){
     //console.log(page)
-    const pattern = /{{\s*code-editor\(([\w-]+)\)\s*}}/g;
+    const pattern = /{{\s*code-editor\(([\w-.]+)\)\s*}}/g;
     return page.replace(pattern, (match, id) => {
         console.log(`The found match: ${match}
             The found id: ${id}`);
