@@ -98,8 +98,18 @@ TERMINALDATA.set(
 );
 
 
-export function renderTerminals(USERDATA){
-    const terminals = document.querySelectorAll(".terminal");
+export function constructTerminal(id, USERDATA){
+    const terminal = TERMINALDATA.get(id);
+    return `<div class="terminal">
+    <div class="header">${USERDATA.shell}${USERDATA.location}</div>
+    <div class="text">
+    <p class="identifier"><span class="user">${USERDATA.user}@${USERDATA.computer} </span><span class="shell">${USERDATA.shell} </span><span class="location">${USERDATA.location}</span></p>
+    <p>$ ${terminal.command}</p>
+    ${createOutput(terminal.output)}
+    </div>
+    </div>
+    `;
+    /*const terminals = document.querySelectorAll(".terminal");
     for(const terminal of terminals){
         let data = TERMINALDATA.get(terminal.dataset.id);
             terminal.appendChild(createHeader(USERDATA));
@@ -148,11 +158,17 @@ export function renderTerminals(USERDATA){
             terminal.appendChild(textBox);
         
     }
+}*/
 }
 
-function createHeader(USERDATA) {
-    const header = document.createElement("div");
-    header.classList.add("header");
-    header.textContent = `${USERDATA.shell}${USERDATA.location}`;
-    return header;
+function createOutput(text) {
+    let result = "";
+    if(Array.isArray(text)){
+        for(const line of text){
+            result += `<p class=\"output\">${line}</p>`;
+        }
+    }else{
+        result += `<p class=\"output\">${text}</p>`;
+    }
+    return result;
 }

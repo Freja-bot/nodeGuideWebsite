@@ -8,13 +8,13 @@
         <p>Javascript is a language historically used in the browser. This is because javascript used to only run in the browser with engines such as the v8. Some languages compile to a binary file that can be executed, others again like Java is compiled to jar, and run in the java virtual machine. The browser or node can interprete javascript, and are required for this turtorial</p>
         <p>To write to a console with javascript, you can utilize the javascript object <strong>console</strong>, and call the method <strong>log()</strong> on it. <strong>log()</strong> accepts a string as an argument.</p>
         {{ code-editor(hello-world) }}
-        <div class="terminal" data-id="node-execute"></div>
+        {{ terminal(node-execute) }}
         <p>Eller et udtryk som evaluere til en en tekststreng.</p>
         {{ code-editor(hello-user) }}
-        <div class="terminal" data-id="node-hello-user"></div>
+        {{ terminal(node-hello-user) }}
         <p><strong>log()</strong> can also accept multiple string arguments</p>
         {{ code-editor(hello-user-with-age) }}
-        <div class="terminal" data-id="node-hello-user-with-age"></div>
+        {{ terminal(node-hello-user-with-age) }}
         <p>If you wanted to print a variable you had stored, which methods should you use? The answer is calling <strong>log()</strong> with multiple arguments. The reason for this answer is that javascript will see you trying to concatinate a non string argument to a string, and will attempt to transform the data to a datatype that can be concatinated to a string using coercion. This action will mutate the data, which could have unintentional sideeffects.</p>
         <p>Speaking of datatypes, Javascript has 8 kinds</p>
         <ul><li>string</li><li>boolean</li><li>number</li><li>object</li><li>bigint</li><li>undefined</li><li>null</li><li>Symbol</li></ul>
@@ -35,10 +35,10 @@
         <p>The backsticks operator `` can also be used to make strings. This operator is more powerfull than double " and single ' quotes.</p>
         <p>One feature is multiline texts. You can create a variable consisting of multiple lines, where line breaks are conserved.</p>
         {{ code-editor(backsticks-multiline) }}
-        <div class="terminal" data-id="backsticks-multiline"></div>
+        {{ terminal(backsticks-multiline) }}
         <p>The backsticks operator has another higly used feature called string interpolation. String interpolation allows one to insert values directly in the string assignment. You insert a value using ${name of variable or just a value}</p>
         {{ code-editor(backsticks-interpolation) }}
-        <div class="terminal" data-id="backsticks-interpolation"></div>
+        {{ terminal(backsticks-interpolation) }}
         <h3>Boolean</h3>
         <p>Javascript has a type for storing boolean values, so <strong>true</strong> and <strong>false</strong>. This is useful for binary variables, and evaluations of expressions</p>
         <h3>Bigint</h3>
@@ -55,13 +55,13 @@
         <p>The Javascript object looks very similar to JSON notaion. The difference is that the keys are not surrounded by "", in Javascript objects. (It is also possible to write comments inside a javascript object, which is not allowd in JSON)</p>
         <p>The typical use of objects is to store related data together. To access the saved values we can dot into the objects keys</p>
         {{ code-editor(object-dotting) }}
-        <div class="terminal" data-id="object-dotting"></div>
+        {{ terminal(object-dotting) }}
         <p>An object can store any datatypes, including other objects. To access such values, one must dot into both objects, like a chain of dots.</p>
         {{ code-editor(object-dotting-into-object) }}
-        <div class="terminal" data-id="object-dotting-into-object"></div>
+        {{ terminal(object-dotting-into-object) }}
         <p>It is also possible to add new key-value pairs to an existing object This is achieved almost the same as accessing properties, by trying to access a key that does not exist yet.</p>
         {{ code-editor(object-add-property) }}
-        <div class="terminal" data-id="object-add-property"></div>
+        {{ terminal(object-add-property) }}
         <h3>More about const</h3>
         <p>const is short for constant, but it is not as simple as the value can never be changed, just that the variable is contant in the assignment. The value is still mutable, so it is still possible to mutate the data within value, but it is not possible to reassign the value.</p>
         {{ code-editor(const-reassignment) }}
