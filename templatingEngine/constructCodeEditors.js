@@ -66,7 +66,7 @@ SCRIPTDATA.set(
     "object-variable",
     {
         filename: "app.js",
-        text: ["const user = {", "name: \"Freja\",", "email: \"freja@gmail.com\",", "id: 239", "};", "", "const plant = {", "name: \"Burro's Tail\",", "latin_name: \"Sedum morganianum\",", "pet_toxicity: false,", "light_level: \"dircet sunlight\",", "min_water_break: 7,", "max_water_break: 10", "};", "", "// You could also asign an empty object, and then add key-value pairs later", "const data = {};"]
+        text: ["const user = {", "name: \"Freja\",", "email: \"freja@gmail.com\",", "id: 239", "};", "", "const plant = {", "name: \"Burro's Tail\",", "latin_name: \"Sedum morganianum\",", "pet_toxicity: false,", "light_level: \"direct sunlight\",", "min_water_break: 7,", "max_water_break: 10", "};", "", "// You could also asign an empty object, and then add key-value pairs later", "const data = {};"]
     }
 );
 SCRIPTDATA.set(
