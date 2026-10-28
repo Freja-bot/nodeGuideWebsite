@@ -1,5 +1,5 @@
 import express from "express";
-import { createPage } from "./templatingEngine/templateEngine.js"
+import pages from "./templatingEngine/pages.js";
 
 const app = express();
 app.use(express.static("public"));
@@ -7,12 +7,12 @@ app.use(express.static("public"));
 const PORT = 8080;
 
 
-app.get("/", (req, res) => {
-    res.send(createPage("public/pages/frontpage/index.html"));
-});
+/*app.get("/", (req, res) => {
+    res.send(pages.nodePage);
+});*/
 
 app.get("/javascript", (req, res) => {
-    res.send(createPage("public/pages/javascript/javascript.html"));
+    res.send(pages.javascriptPage);
 });
 
 app.listen(PORT, error =>{
