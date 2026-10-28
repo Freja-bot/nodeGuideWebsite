@@ -20,50 +20,50 @@ FILESYSTEMDATA.set(
             }
         ]
     });
-    FILESYSTEMDATA.set(
-        "package.json",
-        {
-            currentDirectory: "first_project",
-            files: [
-                {
-                    name: "app.js",
-                    icon: "file"
-                },
-                {
-                    name: "package.json",
-                    icon: "config"
-                },
-                {
-                    name: "package-lock.json",
-                    icon: "config"
-                }
-            ]
-        }
-    );
-    FILESYSTEMDATA.set(
-        "first-html",
-        {
-            currentDirectory: "first_project",
-            files: [
-                {
-                    name: "app.js",
-                    icon: "file"
-                },
-                {
-                    name: "index.html",
-                    icon: "file"
-                },
-                {
-                    name: "package.json",
-                    icon: "config"
-                },
-                {
-                    name: "package-lock.json",
-                    icon: "config"
-                }
-            ]
-        }
-    );
+FILESYSTEMDATA.set(
+    "package.json",
+    {
+        currentDirectory: "first_project",
+        files: [
+            {
+                name: "app.js",
+                icon: "file"
+            },
+            {
+                name: "package.json",
+                icon: "config"
+            },
+            {
+                name: "package-lock.json",
+                icon: "config"
+            }
+        ]
+    }
+);
+FILESYSTEMDATA.set(
+    "first-html",
+    {
+        currentDirectory: "first_project",
+        files: [
+            {
+                name: "app.js",
+                icon: "file"
+            },
+            {
+                name: "index.html",
+                icon: "file"
+            },
+            {
+                name: "package.json",
+                icon: "config"
+            },
+            {
+                name: "package-lock.json",
+                icon: "config"
+            }
+        ]
+    }
+);
 const ICONS = new Map();
 ICONS.set(
     "folder",
@@ -78,8 +78,9 @@ ICONS.set(
     "Config_file_icon.svg"
 );
 
-export function renderFolders(USERDATA){
-    const fileWindows = document.querySelectorAll(".file-system");
+export function renderFolders(id, USERDATA){
+
+    /*nst fileWindows = document.querySelectorAll(".file-system");
     for(const window of fileWindows){
         let file = FILESYSTEMDATA.get(window.id);
             window.appendChild(createHeader(file?.currentDirectory || USERDATA.user));
@@ -103,7 +104,7 @@ export function renderFolders(USERDATA){
 
             window.appendChild(textBox);
         
-    }
+    }*/
 };
 
 function createHeader(currentDirectory) {
