@@ -183,8 +183,15 @@ function createHeader(filename) {
 
 function createText(text){
     let result = "";
+    console.log(result)
     for(let i = 0; i < text.length; i++){
-        result += `<p>${i+1} ${text[i]}</p>`;
+        console.log(`result: ${text[i]}`)
+        result += `<p>${i+1} ${sanitizeForHTML(text[i])}</p>`;
+        console.log(`result: ${result}`)
     }
     return result;
+}
+
+function sanitizeForHTML(text){
+    return text.replaceAll("<", "&lt;").replaceAll(">", "&gt;")
 }
