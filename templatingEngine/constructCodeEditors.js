@@ -149,7 +149,6 @@ SCRIPTDATA.set(
 
 export function constructCodeEditor(id){
    const editor = SCRIPTDATA.get(id);
-    console.log(id);
    return `<div class="code-editor" data-id="${id}">
    <div class="header">${editor.filename}</div>
    <div class="text">
