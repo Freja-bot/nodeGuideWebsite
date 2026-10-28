@@ -8,7 +8,8 @@ FILESYSTEMDATA.set(
                 icon: "folder"
             }
         ]
-    });
+    }
+);
 FILESYSTEMDATA.set(
     "hello-world", 
     {
@@ -19,7 +20,8 @@ FILESYSTEMDATA.set(
                 icon: "file"
             }
         ]
-    });
+    }
+);
 FILESYSTEMDATA.set(
     "package.json",
     {
@@ -78,8 +80,16 @@ ICONS.set(
     "Config_file_icon.svg"
 );
 
-export function renderFolder(id, USERDATA){
-
+export function constructFolder(id, USERDATA){
+    const window = FILESYSTEMDATA.get(id);
+    return `<div class="file-system">
+    <div class="header">${window?.currentDirectory || USERDATA.user}</div>
+    <div class="text">
+    <p class="nameColumn">
+    ${createFiles(window.files)}
+    </p>
+    </div>
+    </div>`;
     /*nst fileWindows = document.querySelectorAll(".file-system");
     for(const window of fileWindows){
         let file = FILESYSTEMDATA.get(window.id);
@@ -107,10 +117,12 @@ export function renderFolder(id, USERDATA){
     }*/
 };
 
-function createHeader(currentDirectory) {
-    const header = document.createElement("div");
-    header.classList.add("header");
-    header.textContent = `${currentDirectory}`;
-    return header;
+function createFiles(files){
+    let result = "";
+    console.log(files);
+    for(const file of files){
+        console.log(`filedta: ${file}`)
+        result += `<img class="icon" src="/assets/images/${ICONS.get(file.icon)}"> <span>${file.name}</span>`;
+    }
+    return result;
 }
-console.log("Hello World!");
