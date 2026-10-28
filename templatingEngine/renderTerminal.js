@@ -109,56 +109,6 @@ export function constructTerminal(id, USERDATA){
     </div>
     </div>
     `;
-    /*const terminals = document.querySelectorAll(".terminal");
-    for(const terminal of terminals){
-        let data = TERMINALDATA.get(terminal.dataset.id);
-            terminal.appendChild(createHeader(USERDATA));
-            const textBox = document.createElement("div");
-            textBox.classList.add("text");
-
-            const identifier = document.createElement("p");
-            identifier.classList.add("identifier");
-
-            const user = document.createElement("span");
-            user.classList.add("user");
-            user.textContent = `${USERDATA.user}@${USERDATA.computer} `;
-            identifier.appendChild(user);
-
-            const shell = document.createElement("span");
-            shell.classList.add("shell");
-            shell.textContent = `${USERDATA.shell} `;
-            identifier.appendChild(shell);
-            textBox.appendChild(identifier);
-
-            const location = document.createElement("span");
-            location.classList.add("location");
-            location.textContent = `${USERDATA.location}`;
-            identifier.appendChild(location);
-            textBox.appendChild(identifier);
-
-            const command = document.createElement("p");
-            command.classList.add("command");
-            command.textContent = `$ ${data.command}`;
-            textBox.appendChild(command);
-
-            if(Array.isArray(data.output)){
-                for(const line of data.output){
-                const output = document.createElement("p");
-                output.classList.add("output");
-                output.textContent = line;
-                textBox.appendChild(output);
-                }
-            }else{
-                const output = document.createElement("p");
-                output.classList.add("output");
-                output.textContent = data.output;
-                textBox.appendChild(output);
-            }
-            
-            terminal.appendChild(textBox);
-        
-    }
-}*/
 }
 
 function createOutput(text) {
