@@ -94,9 +94,7 @@ export function constructFilesytemWindow(id, USERDATA){
 
 function createFiles(files){
     let result = "";
-    console.log(files);
     for(const file of files){
-        console.log(`filedta: ${file}`)
         result += `<img class="icon" src="/assets/images/${ICONS.get(file.icon)}"> <span>${file.name}</span>`;
     }
     return result;
