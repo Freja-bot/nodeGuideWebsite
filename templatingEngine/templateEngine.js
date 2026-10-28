@@ -1,6 +1,7 @@
 import fs from "fs";
 import { constructCodeEditor } from "./constructCodeEditors.js";
 import { constructTerminal } from "./renderTerminal.js";
+import { constructFolder } from "./renderFolder.js";
 
 const header = readPage("public/components/header.html");
 const footer = readPage("public/components/footer.html");
@@ -15,6 +16,7 @@ export function createPage(path) {
     let content = readPage(path);
     content = constructCodeEditors(content);
     content = constructTerminals(content);
+    content = constructFilesytemWindows(content);
     return header + content + footer;
 }
 
@@ -23,28 +25,22 @@ function readPage(path){
 }
 
 function constructCodeEditors(page){
-    //console.log(page)
     const pattern = /{{\s*code-editor\(([\w-.]+)\)\s*}}/g;
     return page.replace(pattern, (match, id) => {
-        console.log(`The found match: ${match}
-            The found id: ${id}`);
         return constructCodeEditor(id);
-        //console.log(`The found id: ${id}`);
     });
-    /*console.log(test);
-    const test = pattern.exec(page);
-    test.forEach(element => {
-        console.log(`line: ${element}`);
-    });
-    return test;*/
 }
 
 function constructTerminals(page){
     const pattern = /{{\s*terminal\(([\w-.]+)\)\s*}}/g;
     return page.replace(pattern, (match, id) => {
-        console.log(`The found match: ${match}
-            The found id: ${id}`);
         return constructTerminal(id, USERDATA);
-        //console.log(`The found id: ${id}`);
+    });
+}
+
+function constructFilesytemWindows(page){
+    const pattern = /{{\s*file-system\(([\w-.]+)\)\s*}}/g;
+    return page.replace(pattern, (match, id) => {
+        return constructFolder(id, USERDATA);
     });
 }

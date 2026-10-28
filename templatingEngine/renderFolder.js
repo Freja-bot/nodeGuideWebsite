@@ -78,7 +78,7 @@ ICONS.set(
     "Config_file_icon.svg"
 );
 
-export function renderFolders(id, USERDATA){
+export function renderFolder(id, USERDATA){
 
     /*nst fileWindows = document.querySelectorAll(".file-system");
     for(const window of fileWindows){

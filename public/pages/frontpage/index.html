@@ -10,7 +10,7 @@
         <p>When you have installed Node, you should have access to node in a terminal. When using windows open powershell or git bash, then type <strong>node -v</strong>.</p>
         {{ terminal(node-version) }}
         <p>This will dislpay the version you of Node you are using, and ensures the program is installed. From here create or choose a folder for a project. In this folder create a file, with the extension <strong>.js</strong>. (like app.js). In this file you can now write a script with javascript.</p>
-        <div class="file-system" id="first_project"></div>
+        {{ file-system(first_project) }}
         <div class="file-system" id="hello-world"></div>
         {{ code-editor(hello-world) }}
         <p>To run the script use a terminal and type <strong>node "filename" </strong>.</p>
