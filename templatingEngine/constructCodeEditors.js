@@ -148,29 +148,6 @@ SCRIPTDATA.set(
 );
 
 export function constructCodeEditor(id){
-    /*
-    const editors = document.querySelectorAll(".code-editor");
-    for(const editor of editors){
-        let script = SCRIPTDATA.get(editor.dataset.id);
-        editor.appendChild(createHeader(script.filename));
-        const textBox = document.createElement("div");
-        textBox.classList.add("text");
-        for(let i = 0; i < script.text.length; i++){
-            const text = document.createElement("p");
-            text.textContent = ` ${i+1} ${script.text[i]}`;
-            textBox.appendChild(text);
-        }
-        editor.appendChild(textBox);
-    }
-    console.log("kasd");
-}
-
-function createHeader(filename) {
-    const header = document.createElement("div");
-    header.classList.add("header");
-    header.textContent = `${filename}`;
-    return header;
-    */
    const editor = SCRIPTDATA.get(id);
     console.log(id);
    return `<div class="code-editor" data-id="${id}">
@@ -183,15 +160,12 @@ function createHeader(filename) {
 
 function createText(text){
     let result = "";
-    console.log(result)
     for(let i = 0; i < text.length; i++){
-        console.log(`result: ${text[i]}`)
         result += `<p>${i+1} ${sanitizeForHTML(text[i])}</p>`;
-        console.log(`result: ${result}`)
     }
     return result;
 }
 
 function sanitizeForHTML(text){
-    return text.replaceAll("<", "&#60;").replaceAll(">", "&#62;")
+    return text.replaceAll("<", "&#60;").replaceAll(">", "&#62;");
 }
