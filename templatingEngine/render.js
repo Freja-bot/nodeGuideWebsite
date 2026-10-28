@@ -1,6 +1,6 @@
 import { renderTerminals } from "./renderTerminal.js";
-import { renderFolders } from "./renderFolder.js";
-import { rendrCodeEditor } from "./constructCodeEditors.js";
+import { renderFolders } from "./renderFilesystemWindow.js";
+import { rendrCodeEditor } from "./renderCodeEditors.js";
 
 const USERDATA = {
     user: "Karen",
