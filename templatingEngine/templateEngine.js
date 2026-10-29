@@ -1,14 +1,15 @@
 import fs from "fs";
+import path from "path"
 import { populatePage } from "./render.js";
 
 const header = readPage("public/components/header.html");
 const footer = readPage("public/components/footer.html");
 
-export function createPage(path) {
-    const content = populatePage(readPage(path));
+export function createPage(filepath) {
+    const content = populatePage(readPage(path.join(process.cwd(), filepath)));
     return header + content + footer;
 }
 
-function readPage(path){
+function readPage(filepath){
     return fs.readFileSync(path, "utf-8");
 }
