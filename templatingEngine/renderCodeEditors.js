@@ -108,7 +108,7 @@ SCRIPTDATA.set(
     "package.json",
     {
         filename: "package.json",
-        text: ["{", "  \"dependencies\": {", "    \"express\": \"^5.3.0\"", "  }", "}"]
+        text: ["{", "\"dependencies\": {", "\"express\": \"^5.3.0\"", "}", "}"]
     }
 );
 SCRIPTDATA.set(
@@ -185,8 +185,16 @@ export function constructCodeEditor(id){
 
 function createText(text){
     let result = "";
+    let indentation = 0;
     for(let i = 0; i < text.length; i++){
-        result += `<p> ${i+1}   ${sanitizeForHTML(text[i])}</p>`;
+        if(text[i].includes("}") && !text[i].includes("{")){
+            indentation -= 2;
+        }
+        result += `<p> ${i+1}   ${" ".repeat(indentation)}${sanitizeForHTML(text[i])}</p>`;
+        if(text[i].includes("{")  && !text[i].includes("}")){
+            indentation += 2;
+        }
+        console.log(`text: ${text[i]}; indentaion level: ${indentation}`)
     }
     return result;
 }
