@@ -67,6 +67,28 @@
         <p>From here an empty white page should be shown at localhost:8080. Next let us create a simple html page, so there is something to look at</p>
         <h3>semantic html</h3>
         <p>We will not focus on html syntaxt, but will instead focus on structureing of the file and semantic html.</p>
+        <p>The body tag is where we define what elements we want to be displayed on our website. There are many html tags, that are commonly used such as <strong>p</strong>, <strong>div</strong>, <strong>form</strong>, <strong>table</strong> and more of their assoiciated tags. There is however a pitfall many developers fall into, which is the overuse of the <strong>div</strong> tag. This can make the readability, and by extension surportability unnecesarily tedious. A way to improve readability is to apply more of the already defined semantic html tags. Another important benifit is that by using relevant tags instead of classes, you gain access to another layer of cascading. It can also result in the CSS becoming more readable.</p>
+        {{ code-editor(css-without-semantic-tags) }}
+        {{ code-editor(css-with-semantic-tags) }}
+        <p>Below is a table of tags, some can serve as a replacment of div tags everywhere, and some have other unique features.</p>
+        <table>
+            <thead>
+                <tr><th>Tag</th><th>When to use</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>&#60;main&#62;</td><td>Is used for the main content of a page</td></tr>
+                <tr><td>&#60;aside&#62;</td><td>Is used for content related to the page, but placed on the side. Could be menues for navigation, advertisment space, tips and so forth</td></tr>
+                <tr><td>&#60;section&#62;</td><td>Is used for each section within the page</td></tr>
+                <tr><td>&#60;article&#62;</td><td>Is used for self contained articles, blogs and similar</td></tr>
+                <tr><td>&#60;fieldset&#62;</td><td>Is used for grouping related form elements</td></tr>
+                <tr><td>&#60;header&#62;</td><td>Is used for the header of a page, so typically at the top</td></tr>
+                <tr><td>&#60;footer&#62;</td><td>Is used for the footer of a page, so typically at the bottom</td></tr>
+                <tr><td>&#60;address&#62;</td><td>Is used for personal or orginasational contact details</td></tr>
+                <tr><td>&#60;cite&#62;</td><td>Is used for Citing others work</td></tr>
+                <tr><td>&#60;datalist&#62;</td><td>Is used for autocompleting for input elements. Thetag will need an id attribute, and the iput tag will need the list attribute set to the ids value</td></tr>
+                
+            </tbody>
+        </table>
         <p>The head tag is used to contain metadata, that should be loaded before the body. Some often used tags are:</p>
         <ul>
             <li>&#60;meta&#62;</li>

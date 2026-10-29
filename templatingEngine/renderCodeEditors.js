@@ -160,6 +160,20 @@ SCRIPTDATA.set(
         text: ["<!DOCTYPE html>", "<html>", "<head>", "<meta charset=\"UTF-8\">", "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">", "<title>My Tab Name</title>", "<style>", "p {", "color: red;", "}", "</style>", "</head>", "<body>", "</body>", "</html>"]
     }
 );
+SCRIPTDATA.set(
+    "css-without-semantic-tags",
+    {
+        filename: "style.css",
+        text: ["div.section {", "}", "div.section#highlight {", "}"]
+    }
+);
+SCRIPTDATA.set(
+    "css-with-semantic-tags",
+    {
+        filename: "style.css",
+        text: ["section {", "}","section.center {", "}", "section.center#highlight {", "}"]
+    }
+);
 
 export function constructCodeEditor(id){
    const editor = SCRIPTDATA.get(id);
