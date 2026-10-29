@@ -108,7 +108,7 @@ SCRIPTDATA.set(
     "package.json",
     {
         filename: "package.json",
-        text: ["{", "\"dependencies\": {", "\"express\": \"^5.3.0\"", "}", "}"]
+        text: ["{", "  \"dependencies\": {", "    \"express\": \"^5.3.0\"", "  }", "}"]
     }
 );
 SCRIPTDATA.set(
@@ -179,16 +179,14 @@ export function constructCodeEditor(id){
    const editor = SCRIPTDATA.get(id);
    return `<div class="code-editor" data-id="${id}">
    <div class="header">${editor.filename}</div>
-   <div class="text">
-   ${createText(editor.text)}
-   </div>
+   <pre class="text">${createText(editor.text)}</pre>
    </div>`;
 }
 
 function createText(text){
     let result = "";
     for(let i = 0; i < text.length; i++){
-        result += `<p>${i+1} ${sanitizeForHTML(text[i])}</p>`;
+        result += `<p> ${i+1}   ${sanitizeForHTML(text[i])}</p>`;
     }
     return result;
 }

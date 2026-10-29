@@ -78,6 +78,10 @@ td:first-of-type {
     color: #FFBB00;
 }
 
+pre {
+    margin: 10px 0 0 0;
+}
+
 .text p{
     margin: 0.25em;
 }
