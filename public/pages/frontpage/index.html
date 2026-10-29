@@ -66,7 +66,7 @@
         {{ code-editor(first-expres-file-send) }}
         <p>From here an empty white page should be shown at localhost:8080. Next let us create a simple html page, so there is something to look at</p>
         <h3>semantic html</h3>
-        <p>We will not focus on how to make html file from scratch, but will instead focus on semantic html.</p>
+        <p>We will not focus on html syntaxt, but will instead focus on structureing of the file and semantic html.</p>
         <p>The head tag is used to contain metadata, that should be loaded before the body. Some often used tags are:</p>
         <ul>
             <li>&#60;meta&#62;</li>
@@ -77,3 +77,14 @@
         <p>The title tag is self explanitory, and is a good example of semantic naming.</p>
         {{ code-editor(head-tag) }}
         <p>The link tag i used when external files are needed, this will often be an external css file.</p>
+        <h4>CSS</h4>
+        <p>CSS stands for cascading style sheet, and derives its name from how it applies its defined styles. It defines the style of elemetns and applies it, using a cascading order, that navigates through all styles each element falls under, from the most generic definition to the most specific. So if all p elements have the style text-align: center, and p elements with the class left, has text-align left as a style, css will cascade down to the most specific style (here being p tags with class left), and the more specific style will ovewrite the more generic p tag style.</p>
+        <p>In a html file CSS can be handled three ways: inline, internally or externally.</p>
+        <h4>Inline CSS</h4>
+        <p>CSS properties can be applied directly to any html tag, as an attribute. Inline styling will always take priority in the cascading order. As a general rule inline styling should be avoided. One important reason is that it is very easy to overwrite the inline style attributes, especially when dynamically changing the page client side. Another reason is if a property should be applied more than once, the attribute/attributes will ave to be repeated.</p>
+        <h4>internal CSS</h4>
+        <p>html has a tag called CSS, wherein you can define styles. This must be done in the head tag, so the styles can be discovered before the body loads the elements.</p>
+        {{ code-editor(style-tag) }}
+        <p>Internal CSS is much better than inline styling, since tags being changed dynamically will much less often interfere with styling, and styles can be resused across similar tags, and we can use cascading to our advantage. One issue with having all our styling in our html file is that it can quickly become very long. Another is that when developing multipage web apps, we will have to repeat any common styling definitions in every file.</p>
+        <h4>External CSS</h4>
+        
