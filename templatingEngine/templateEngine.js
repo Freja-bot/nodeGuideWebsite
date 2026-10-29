@@ -6,10 +6,10 @@ const header = readPage("public/components/header.html");
 const footer = readPage("public/components/footer.html");
 
 export function createPage(filepath) {
-    const content = populatePage(readPage(path.join(process.cwd(), filepath)));
+    const content = populatePage(readPage(filepath));
     return header + content + footer;
 }
 
-function readPage(fullpath){
-    return fs.readFileSync(fullpath, "utf-8");
+function readPage(filepath){
+    return fs.readFileSync(path.join(process.cwd(), filepath), "utf-8");
 }
