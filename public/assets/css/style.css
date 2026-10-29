@@ -20,6 +20,29 @@ main{
     margin: 20px 10%;
 }
 
+table {
+    border: 1px solid black;
+    background-color: #272d64;
+}
+
+th {
+    background-color: inherit;
+}
+
+td {
+    background-color: #1f223e;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 18px 10px;
+    margin: 0;
+}
+
+td:first-of-type {
+    text-align: center;
+}
+
 #title{
     text-align: center;
 }
