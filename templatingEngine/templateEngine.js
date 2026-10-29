@@ -10,6 +10,6 @@ export function createPage(filepath) {
     return header + content + footer;
 }
 
-function readPage(filepath){
-    return fs.readFileSync(path, "utf-8");
+function readPage(fullpath){
+    return fs.readFileSync(fullpath, "utf-8");
 }
