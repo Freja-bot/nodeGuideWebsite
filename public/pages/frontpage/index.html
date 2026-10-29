@@ -60,7 +60,20 @@
         {{ file-system(first-html) }}
         <p>To make a html file type: &#60;!DOCTYPE html&#62; then make a open and closing html tag (&#60;html&#62; and &#60;/html&#62;). inside those tags make a head and body tag.</p>
         {{ code-editor(empty-index-file) }}
-        <p>But we are still just sending te same JSON object. To send the file we have to change what the response object is sending to the client. To achieve this we have to call a different method on the response object named <strong>sendFile()</strong>. The method expects the path of our frontpage file. Its important we provide the full path, or else express will throw an error.</p>
-        <p>We could manually type the full path, but this would make the code unreliable. If the server is ever hosted anywhere else, wheter under development or in production, the code wil stop working.</p>
-        <p>Instead lets get the full path programatically. Because we are using commonjs we have access to a variable named <strong>__dirname</strong> that has the string path of where the script was executed. Because app.js in the root of the project, <strong>__dirname</strong> is the path to the root of the project. The index file is also in the root of the project, so the path is the same. From here we could concatinate the file name to the end of <strong>__dirname</strong>, but the better solution is simply to pass <strong>__dirname</strong> and the filename as seperate arguments to <strong>sendFile()</strong>.</p>
+        <p>If you run the sever now, you will still see the same JSON object being send, because we have not updated what the router send back when a client asks for the frontpage. To send the file we have to change what the response object in app.js is sending to the client. To achieve this we have to call a different method on the response object named <strong>sendFile()</strong>. The method expects the path of our frontpage file. Here it is important that we provide the full path, not just the relative path, or else express will throw an error.</p>
+        <p>We could manually type the full path, but this would make the code unreliable. If the server is ever hosted anywhere else, wheter under development or in production, the code wil stop working, since other enviorments wil not always have the same file structure as our local.</p>
+        <p>Instead lets get the full path programatically. Because we are using commonjs we have access to a variable named <strong>__dirname</strong> that has the string path of where the script was executed. Because app.js in the root of the project, <strong>__dirname</strong> is the path to the root of the project. The index file is also in the root of the project, so the path is the same. From here we can concatinate the file name to the end of <strong>__dirname</strong></p>
         {{ code-editor(first-expres-file-send) }}
+        <p>From here an empty white page should be shown at localhost:8080. Next let us create a simple html page, so there is something to look at</p>
+        <h3>semantic html</h3>
+        <p>We will not focus on how to make html file from scratch, but will instead focus on semantic html.</p>
+        <p>The head tag is used to contain metadata, that should be loaded before the body. Some often used tags are:</p>
+        <ul>
+            <li>&#60;meta&#62;</li>
+            <li>&#60;title&#62;</li>
+            <li>&#60;link&#62;</li>
+        </ul>
+        <p>The meta tag contains meta data like what characterset is used <strong>charset</strong> or to change the viewport to match the clients device.</p>
+        <p>The title tag is self explanitory, and is a good example of semantic naming.</p>
+        {{ code-editor(head-tag) }}
+        <p>The link tag i used when external files are needed, this will often be an external css file.</p>

@@ -146,6 +146,13 @@ SCRIPTDATA.set(
         text: ["const express = require(\"express\");", "const app = express();", "app.get(\"/\", (req, res) => {", "res.sendFile(__dirname + \"index.html\");", "});", "app.listen(8080);"]
     }
 );
+SCRIPTDATA.set(
+    "head-tag",
+    {
+        filename: "index.html",
+        text: ["<!DOCTYPE html>", "<html>", "<head>", "<meta charset=\"UTF-8\">", "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">", "<title>My Tab Name</title>", "</head>", "<body>", "</body>", "</html>"]
+    }
+);
 
 export function constructCodeEditor(id){
    const editor = SCRIPTDATA.get(id);
